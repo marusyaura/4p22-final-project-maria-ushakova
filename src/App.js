@@ -19,14 +19,15 @@ useEffect(() => {
 
   return (
     <div className="App">
-      <h1>Кондитерская Sweet Dreams (are made of this)</h1>
+      <h1>Ассортимент Sweet-Marselina</h1>
       <div className="App-container">
         {
           products.map((item, index) => {
             return  <Card key={index}
                           title={item.title}
-                          description={item.description}
-                          image={item.image} />
+                          description={item.previewDescription}
+                          image={item.image}
+                          price={item.price} />
           })
         }
       </div>

@@ -7,6 +7,7 @@
     border-radius: 0;
     transition: .2s background-color;
     cursor: pointer;
+
 }
 
 .CommonButton:hover {
