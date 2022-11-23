@@ -19,7 +19,7 @@ useEffect(() => {
 
   return (
     <div className="App">
-      <h1>Ассортимент Sweet-Marselina</h1>
+      <h1>Ассортимент sweet_marselina</h1>
       <div className="App-container">
         {
           products.map((item, index) => {
@@ -27,7 +27,9 @@ useEffect(() => {
                           title={item.title}
                           description={item.previewDescription}
                           image={item.image}
-                          price={item.price} />
+                          price={item.price} 
+                          rating={item.rating}
+                          weight={item.weight} />
           })
         }
       </div>
