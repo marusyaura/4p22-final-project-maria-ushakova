@@ -1,25 +1,42 @@
-import logo from './logo.svg';
 import './App.css';
+import Card from './components/Card/Card';
+import Button from './components/Button/Button';
+import { useEffect, useState } from 'react';
 
 function App() {
+const [ products, setProducts ] = useState([]);
+//let products = [];
+
+useEffect(() => {
+    fetch('/4p22-final-project-maria-ushakova/Cakes.json')
+      .then((response) => response.json())
+      .then((result) => {
+       setProducts(result);
+       //products = [...result];
+       //console.log(products);
+      })
+}, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Кондитерская Sweet Dreams (are made of this)</h1>
+      <div className="App-container">
+        {
+          products.map((item, index) => {
+            return  <Card key={index}
+                          title={item.title}
+                          description={item.description}
+                          image={item.image} />
+          })
+        }
+      </div>
+      <div className="App-newsletter">
+        <h2>Подписаться на новости компании</h2>
+        <input placeholder="email" type="email"></input>
+        <Button text="Подписаться"/>
+      </div>
     </div>
   );
-}
+};
 
-export default App;
+export default App
