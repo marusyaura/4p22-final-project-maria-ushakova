@@ -1,6 +1,6 @@
 import './App.css';
 import Card from './components/Card/Card';
-import Button from './components/Button/Button';
+import IconButton from './components/IconButton/IconButton';
 import { useEffect, useState } from 'react';
 
 function App() {
@@ -36,7 +36,7 @@ useEffect(() => {
       <div className="App-newsletter">
         <h2>Подписаться на новости компании</h2>
         <input placeholder="email" type="email"></input>
-        <Button text="Подписаться"/>
+        <IconButton />
       </div>
     </div>
   );

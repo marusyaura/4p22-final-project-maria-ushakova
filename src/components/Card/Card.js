@@ -1,5 +1,5 @@
 import './Card.css';
-import Button from '../Button/Button';
+import IconButton from '../IconButton/IconButton';
 
 function Card(props) {
     return (
@@ -11,7 +11,7 @@ function Card(props) {
              <p className="Card-description">{ props.description }</p>
              <div className="Card-weight">{ props.weight }</div>
              <div className="Card-price common-price">{ props.price }</div>
-             <Button text="Купить"/>
+             <IconButton />
          </div>
        </div>   
           )
