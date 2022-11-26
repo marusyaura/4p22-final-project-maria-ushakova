@@ -1,19 +1,21 @@
 import './Card.css';
 import IconButton from '../IconButton/IconButton';
+import { Link } from "react-router-dom";
 
-function Card(props) {
+
+function Card({ image, rating, weight, title, description, price, id, onClick = () => {} }) {
     return (
-       <div className="Card">
-         <img className="Card-img" src={ props.image }></img>
+       <Link to={`products/${id}`} className="Card" onClick={() => onClick(title)}>
+         <img className="Card-img" src={ image }></img>
          <div className="Card-container">
-             <h2 className="Card-title">{ props.title }</h2>
-             <div className="Card-rating">{ props.rating }</div>
-             <p className="Card-description">{ props.description }</p>
-             <div className="Card-weight">{ props.weight }</div>
-             <div className="Card-price common-price">{ props.price }</div>
+             <h2 className="Card-title">{ title }</h2>
+             <div className="Card-rating">{ rating }</div>
+             <p className="Card-description">{ description }</p>
+             <div className="Card-weight">{ weight }</div>
+             <div className="Card-price common-price">{ price }</div>
              <IconButton />
-         </div>
-       </div>   
+         </div> 
+       </Link>  
           )
 
 };

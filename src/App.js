@@ -1,45 +1,25 @@
 import './App.css';
-import Card from './components/Card/Card';
-import IconButton from './components/IconButton/IconButton';
-import { useEffect, useState } from 'react';
+
+import { Routes, Route } from 'react-router-dom';
+
+import IndexPage from './pages/Index/Index';
+import ProductPage from './pages/Product/Product';
+import DefaultLayout from './layouts/DefaultLayout';
 
 function App() {
-const [ products, setProducts ] = useState([]);
-//let products = [];
-
-useEffect(() => {
-    fetch('/4p22-final-project-maria-ushakova/Cakes.json')
-      .then((response) => response.json())
-      .then((result) => {
-       setProducts(result);
-       //products = [...result];
-       //console.log(products);
-      })
-}, []);
 
   return (
     <div className="App">
-      <h1>Ассортимент sweet_marselina</h1>
-      <div className="App-container">
-        {
-          products.map((item, index) => {
-            return  <Card key={index}
-                          title={item.title}
-                          description={item.previewDescription}
-                          image={item.image}
-                          price={item.price} 
-                          rating={item.rating}
-                          weight={item.weight} />
-          })
-        }
-      </div>
-      <div className="App-newsletter">
-        <h2>Подписаться на новости компании</h2>
-        <input placeholder="email" type="email"></input>
-        <IconButton />
-      </div>
-    </div>
-  );
-};
+      <Routes>
+        <Route path={'/'} element={<DefaultLayout/>}>
+          <Route index element={<IndexPage/>} />
+          <Route path={'products'}>
+            <Route path={':userId'} element={<ProductPage/>} />
+          </Route>
+        </Route>
+      </Routes>
 
-export default App
+      </div>
+  )}
+
+export default App;

@@ -7,14 +7,3 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #ffe6d6;
 }
-
-.App-container {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 1rem 2rem;
-  gap: 1.5rem;
-}
-
-.common-price::after {
-  content: '₽';
-}
