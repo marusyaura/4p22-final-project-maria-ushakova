@@ -11,14 +11,11 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path={'/'} element={<DefaultLayout/>}>
-          <Route index element={<IndexPage/>} />
-          <Route path={'products'}>
+          <Route index path={'/'} element={<IndexPage/>} />
+          <Route path={'product'}>
             <Route path={':userId'} element={<ProductPage/>} />
           </Route>
-        </Route>
       </Routes>
-
       </div>
   )}
 

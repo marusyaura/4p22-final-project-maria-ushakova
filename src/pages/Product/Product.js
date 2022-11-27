@@ -1,25 +1,28 @@
-import { useEffect, useState, useParams } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import './Product.css';
+
 
 function ProductPage() {
     const { userId } = useParams();
-    const [ products, setProducts ] = useState([]);
-
-useEffect(() => {
-
-    (async () => {
-    const response = await fetch(`/4p22-final-project-maria-ushakova/${userId}.json`);
-    const result = await response.json();
-
-    setProducts(result);
-    })();
-
-}, []);
-
+    const [ product, setProduct ] = useState({});
+   
+   useEffect(() => {
+   
+       (async () => {
+       const response = await fetch(`products.json/${userId}`);
+       const result = await response.json();
+   
+       setProduct(result);
+       
+       })();
+   
+   }, []);
+   
     return (
         <>
-        <h1>{ products.title }</h1>
-        <img src={ products.image }></img>
+        <h1>{ product.title }</h1>
+        <img src={ product.image }></img>
         </>
     )
 }

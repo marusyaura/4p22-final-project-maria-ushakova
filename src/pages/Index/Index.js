@@ -9,12 +9,11 @@ function IndexPage() {
     //let products = [];
     
     useEffect(() => {
-        fetch('/4p22-final-project-maria-ushakova/Cakes.json')
+        fetch('4p22-final-project-maria-ushakova/products.json')
           .then((response) => response.json())
           .then((result) => {
            setProducts(result);
-           //products = [...result];
-           //console.log(products);
+           
           })
     }, []);    
 
@@ -25,12 +24,13 @@ function IndexPage() {
           products.map((item, index) => {
             return  <Card key={index}
                           title={item.title}
-                          description={item.previewDescription}
+                          description={item.description}
                           id={item.id}
                           image={item.image}
                           price={item.price} 
                           rating={item.rating}
-                          weight={item.weight} />
+                          category={item.category}
+                     />
           })
         }
         <Link></Link>
