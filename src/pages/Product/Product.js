@@ -19,13 +19,13 @@ function ProductPage() {
    }, []);
    
     return (
-        <>
-        <h1>{ product.title }</h1>
-        <img src={ product.image }></img>
-        <p>{ product.detailDescription }</p>
-        <p>{ product.rating }</p>
-        <p>{ product.weight }</p>
-        </>
+        <div className='ProductPage'>
+        <h1 className='ProductTitle'>{ product.title }</h1>
+        <img className='ProductImage'src={ product.image }></img>
+        <p className='ProductRating'>{ product.rating }</p>
+        <p className='ProductWeight'>{ product.weight }</p> 
+        <p className='ProductDescription'>{ product.detailDescription }</p>
+        </div> 
     )
 }
 

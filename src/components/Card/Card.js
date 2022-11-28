@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addToBasket, removeFromBasket } from '../../store/basket/basketSlice';
 
 
+
 function Card({ image, rating, weight, title, description, price, id }) {
    const dispatch = useDispatch();
    const products = useSelector((state) => state.basket);
@@ -35,14 +36,14 @@ function Card({ image, rating, weight, title, description, price, id }) {
              <p className="Card-description">{ description }</p>
              <div className="Card-weight">{ weight }</div>
              <div className="Card-price common-price">{ price }</div>
-         </Link>   
-             {!products[id] && <button onClick={onBuyClick}>Купить</button>}
+         </Link>
+             {!products[id] && <IconButton onClick={onBuyClick} />}
              {products[id] && (
-              <>
-                {<button onClick={onBuyClick}>+</button>}
+              <div className='ButtonCounterContainer'>
+                {<button className='ButtonCounter' onClick={onBuyClick}>+</button>}
                 {products[id]}
-                {<button onClick={onDeleteClick}>-</button>}
-              </>
+                {<button className='ButtonCounter' onClick={onDeleteClick}>-</button>}
+              </div>
              )}
      </div> 
      </>    
