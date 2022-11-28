@@ -9,10 +9,10 @@ function IndexPage() {
     //let products = [];
     
     useEffect(() => {
-        fetch('4p22-final-project-maria-ushakova/products.json')
+        fetch('https://api.npoint.io/cb648043f49f676ca672')
           .then((response) => response.json())
           .then((result) => {
-           setProducts(result);
+           setProducts(result.products);
            
           })
     }, []);    
@@ -24,12 +24,12 @@ function IndexPage() {
           products.map((item, index) => {
             return  <Card key={index}
                           title={item.title}
-                          description={item.description}
+                          description={item.previewDescription}
                           id={item.id}
                           image={item.image}
                           price={item.price} 
                           rating={item.rating}
-                          category={item.category}
+                          category={item.weight}
                      />
           })
         }
