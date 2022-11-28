@@ -9,7 +9,7 @@ export default function IconLabelButtons() {
     return (
     <Stack direction="row" spacing={2}>
       <Button variant="outlined" aria-label="add to shopping cart" endIcon={<AddShoppingCartIcon />} color="error">
-        Купить
+      Купить
       </Button> 
     </Stack>
   );

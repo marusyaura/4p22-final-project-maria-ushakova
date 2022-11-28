@@ -3,10 +3,13 @@ import Card from '../../components/Card/Card';
 import IconButton from '../../components/IconButton/IconButton';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { decrement } from '../../store/counter/counterSlice';
+import { useDispatch } from 'react-redux';
+import { clearBasket } from '../../store/basket/basketSlice';
 
 function IndexPage() {
     const [ products, setProducts ] = useState([]);
-    //let products = [];
+    const dispatch = useDispatch();
     
     useEffect(() => {
         fetch('https://api.npoint.io/cb648043f49f676ca672')
@@ -19,6 +22,7 @@ function IndexPage() {
 
     return (
       <>
+      <button onClick={() => dispatch(clearBasket())}>Очистить корзину</button>
         <div className="Index-container">
         {
           products.map((item, index) => {
