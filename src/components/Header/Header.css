@@ -1,8 +1,64 @@
-.Header {
-background-color: #f1b8bf;
-height: 5rem;
+.HeaderContainer {
+width: 100%;
+background-image: url("../../../public/dots.jpg");
+background-size: cover;
+height: 8rem;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: space-around;
+
 }
 
 .Header h1 {
     margin: 0;
+}
+
+.HeaderLogoContainer {
+    display: flex;
+    align-items: center;
+}
+
+
+.HeaderShoppingContainer {
+display: flex;
+align-items: center;
+height: 25%;
+border: 1px solid #f3c1ba;
+border-radius: 20%;
+padding-right: 1rem;
+
+}
+
+.HeaderBasketContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffdbd6;
+    padding: 0 0.5rem;
+    border-radius: 10%;
+}
+
+
+.HeaderLogoContainer {
+    background-color: #ffdbd6;
+    border-radius: 50%;
+    padding: 0.4rem;
+}
+
+.HeaderNameContainer {
+    background-color: #ffdbd6;
+    line-height: 0.2rem;
+    text-align: center;
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 10%;
+}
+
+.HeaderLogo {
+    height: 7rem;
+   
 }

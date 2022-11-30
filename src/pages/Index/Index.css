@@ -3,7 +3,7 @@
 }
 
 
-.Index-container {
+.IndexCardcontainer {
     display: flex;
     flex-wrap: wrap;
     padding: 1rem 2rem;
@@ -14,3 +14,8 @@
   .common-price::after {
     content: '₽';
   }
+
+ .IndexMenucontainer {
+  height: 4rem;
+  background-color: #ffdbd6;
+ }

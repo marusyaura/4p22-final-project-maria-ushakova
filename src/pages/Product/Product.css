@@ -8,13 +8,48 @@
 }
 
 .ProductTitle {
-    font-size: 2rem;  
+    font-size: 2rem;
+    margin: 0.5rem;
 }
 
 .ProductRating{
     font-size: 2rem;  
+    margin: 0.2rem;
 }
 
 .ProductWeight{
     font-size: 2rem;  
+    margin: 0.2rem;
 }
+
+.ProductImage {
+    margin: 0.2rem;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.ProductDescription{ 
+    margin: 0.2rem;
+    text-indent: 6rem;
+    line-height: 2rem;
+}
+
+.ButtonCounter {
+    width: 2.5rem;
+    height: 2.2rem;
+    color:#be1526;
+    margin: 0.3rem;
+    margin-top: 0;
+    background-color: #ffe6d6;
+    font-size: 1.5rem;
+    font-weight: 100;
+    border: 0.1px solid rgb(218, 130, 130);
+    border-radius: 4px;
+    justify-content: center;
+  }
+
+  .ButtonCounterContainer {
+    display: flex;
+    align-items: center;
+   
+  }
