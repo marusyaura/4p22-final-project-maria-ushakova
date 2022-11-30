@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/4p22-final-project-maria-ushakova/static/css/main.5bae1ad8.css",
-    "main.js": "/4p22-final-project-maria-ushakova/static/js/main.1da1773d.js",
+    "main.css": "/4p22-final-project-maria-ushakova/static/css/main.9d1e8b27.css",
+    "main.js": "/4p22-final-project-maria-ushakova/static/js/main.5e071ab4.js",
     "static/media/dots.jpg": "/4p22-final-project-maria-ushakova/static/media/dots.f29da5b45432e5e27dc3.jpg",
     "index.html": "/4p22-final-project-maria-ushakova/index.html",
-    "main.5bae1ad8.css.map": "/4p22-final-project-maria-ushakova/static/css/main.5bae1ad8.css.map",
-    "main.1da1773d.js.map": "/4p22-final-project-maria-ushakova/static/js/main.1da1773d.js.map"
+    "main.9d1e8b27.css.map": "/4p22-final-project-maria-ushakova/static/css/main.9d1e8b27.css.map",
+    "main.5e071ab4.js.map": "/4p22-final-project-maria-ushakova/static/js/main.5e071ab4.js.map"
   },
   "entrypoints": [
-    "static/css/main.5bae1ad8.css",
-    "static/js/main.1da1773d.js"
+    "static/css/main.9d1e8b27.css",
+    "static/js/main.5e071ab4.js"
   ]
 }
