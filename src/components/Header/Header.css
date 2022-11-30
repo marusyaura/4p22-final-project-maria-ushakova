@@ -1,3 +1,11 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width:100%;
+}
+
 .HeaderContainer {
 width: 100%;
 background-image: url("../../../public/dots.jpg");
@@ -54,11 +62,43 @@ padding-right: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-
     border-radius: 10%;
 }
 
 .HeaderLogo {
     height: 7rem;
    
+}
+
+@media screen and (max-width: 768px) {
+
+    .HeaderContainer {
+        flex-direction: column;
+        height: 12rem;
+        }
+        
+        .HeaderBasketContainer {
+            padding: 0;
+            justify-content: center;
+            font-size: 0.7rem;
+        }
+
+        .HeaderShoppingContainer {
+            height: 1rem;
+            border-radius: 20%;
+            padding: 1rem;
+            
+            }
+
+        .HeaderNameContainer {
+            line-height: 0.05rem;
+            font-size: 0.8rem;        
+        }
+        
+        .HeaderLogo {
+            height: 8rem;
+           
+        }
+
+
 }

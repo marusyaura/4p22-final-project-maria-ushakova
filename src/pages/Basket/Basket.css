@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  
+  .Basketgoodscontainer {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 1rem 2rem;
+      gap: 1.5rem;
+      
+    }
+
+.BasketTotalcontainer {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .BasketTotalcontainer {
+    font-size: 1.2rem;
+    padding: 0.2rem;
+    }
+}

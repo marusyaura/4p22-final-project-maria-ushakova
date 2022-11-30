@@ -1,5 +1,6 @@
 import Card from '../../components/Card/Card';
 import { useSelector } from "react-redux";
+import './Basket.css';
 
 function BasketPage() {
     const products = useSelector(state => state.products.entities);
@@ -7,7 +8,8 @@ function BasketPage() {
     
     return (
             <>
-            <div>
+            <div className='BasketTotalcontainer'>
+                <p>Итого к оплате: </p>
                 { products.reduce((acc, product) => {
                 if (basket[product.id]) {
                 acc += product.price * basket[product.id]
@@ -15,7 +17,7 @@ function BasketPage() {
                 return acc;
             }, 0) }
             </div>
-            <div>
+            <div className='Basketgoodscontainer'>
              { products
                      .filter((product) => basket[product.id])
                      .map((item, index) => {
@@ -31,7 +33,8 @@ function BasketPage() {
                                             }
                          )
              }
-             </div>
+             </div>            
+
             </>
            )
 }
