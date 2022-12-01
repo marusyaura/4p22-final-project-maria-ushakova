@@ -35,7 +35,9 @@ function BasketPage() {
                          )
              }
              </div>            
-
+             <div className='MakeOrder'>
+                <button onClick={(event) => console.log(basket)}>Оформить заказ</button>
+             </div>
             </>
            )
 }
