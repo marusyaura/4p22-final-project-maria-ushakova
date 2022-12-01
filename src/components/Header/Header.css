@@ -33,9 +33,8 @@ display: flex;
 align-items: center;
 height: 25%;
 border: 1px solid #f3c1ba;
-border-radius: 20%;
+border-radius: 10px;
 padding-right: 1rem;
-
 }
 
 .HeaderBasketContainer {
@@ -44,7 +43,6 @@ padding-right: 1rem;
     align-items: center;
     background-color: #ffdbd6;
     padding: 0 0.5rem;
-    border-radius: 10%;
 }
 
 
@@ -74,30 +72,28 @@ padding-right: 1rem;
 
     .HeaderContainer {
         flex-direction: column;
-        height: 12rem;
+        height: 6rem;
         }
         
         .HeaderBasketContainer {
             padding: 0;
-            justify-content: center;
-            font-size: 0.7rem;
+            font-size: 0.5rem;
         }
 
         .HeaderShoppingContainer {
-            height: 1rem;
-            border-radius: 20%;
+            height: 0.6rem;
+            border-radius: 3px;
             padding: 1rem;
             
             }
 
         .HeaderNameContainer {
-            line-height: 0.05rem;
-            font-size: 0.8rem;        
+            position: absolute;
+            opacity: 0;       
         }
         
         .HeaderLogo {
-            height: 8rem;
-           
+            height: 5rem;
         }
 
 

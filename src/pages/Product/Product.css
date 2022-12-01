@@ -33,7 +33,7 @@ body {
 .ProductImage {
     margin: 0.2rem;
     border-radius: 10px;
-    width: 100%;
+    height: 60rem;
 }
 
 .ProductDescription{ 

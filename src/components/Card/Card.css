@@ -1,12 +1,21 @@
 .Card {
     width: 16rem;
-    height: 34.5rem;
-    box-shadow: 1px 1px 10px 4px #f1b8bf;
+    height: 35.5rem;
+    box-shadow: 1px 1px 10px 4px #ffdbd6;
     border-radius: 15px;
     overflow: hidden;
     font-family: Comic Sans MS;
     font-size: 0.86rem;
     padding: 0.6rem 0.6rem;
+    transition: all .4s ease;
+    z-index: 1;
+}
+
+.Card:hover {
+  scale: 1.02;
+  transform: translateY(-5px);
+  background-color: #ffdbd6;
+  box-shadow: 1px 1px 10px 4px #ffdbd6;
 }
 
 .Card-img {
@@ -14,7 +23,7 @@
     height: 20.7rem;
     object-fit: cover;
     border-radius: 8px;
-    box-shadow: 1px 1px 10px 4px #f1b8bf;
+    box-shadow: 1px 1px 10px 4px #ffdbd6;
 }
 
 .Card-price {

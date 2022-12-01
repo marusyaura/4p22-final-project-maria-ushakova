@@ -15,7 +15,8 @@ function BasketPage() {
                 acc += product.price * basket[product.id]
                 }
                 return acc;
-            }, 0) }
+            }, 0) 
+            }
             </div>
             <div className='Basketgoodscontainer'>
              { products
