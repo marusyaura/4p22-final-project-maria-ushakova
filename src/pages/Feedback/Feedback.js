@@ -11,21 +11,36 @@ const [ emailError, setEmailError ] = useState('error')
 const [ nameError, setNameError] = useState('error')
 const [ textareaError, setTextareaError ] = useState('error')
 
-const clickFeedback = (event)=>{
+const [gender, setGender] = useState('мужчина')
+
+const [checked, setChecked] = useState(true)
+
+
+const clickFeedback = (event) => {
   if (emailError+nameError+textareaError) {
       event.preventDefault();
+
   } else {
-      console.log({Email: email, Name: name, Text: textarea});
+    event.preventDefault();
+      console.log({Email: email, ФИО: name, Обращение: textarea, Пол: gender, Согласие: checked});
   }
 }
+  
+const chengeGender = (event)=> { 
+   setGender(event.target.value); 
+  }
 
 const clickMailValue = (event)=>{
-
-  setEmail(event.target.value)    }
+  setEmail(event.target.value);    
+}
 
 const clickTextValue = (event)=>{
+  setTextarea(event.target.value);    
+}
 
-  setTextarea(event.target.value)    }
+const chengeCheckbox = (event)=> {
+    setChecked(!checked);
+ }
    
 useEffect(()=>{
       const mask = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -68,11 +83,15 @@ useEffect(()=>{
           <div className="form-input__radio"> 
             <div className="form-input-radio__gender">Пол</div>
             <div className="form-input-radio__box">
-            <input className="form-input-radio__input" id="radio1" type="radio" name="gender" value="man" defaultChecked></input>
+            <input className="form-input-radio__input" id="radio1" type="radio" name="gender" value="мужской"
+             checked={gender == 'мужской' ? true : false}
+             onChange={chengeGender}></input>
             <label className="form-input-radio__label" htmlFor="radio1">Мужчина</label>
             </div>
             <div className="form-input-radio__box">
-            <input className="form-input-radio__input" id="radio2" type="radio" name="gender" value="woman"></input>
+            <input className="form-input-radio__input" id="radio2" type="radio" name="gender" value="женский" 
+            checked={gender == 'женский' ? true : false}
+            onChange={chengeGender}></input>
             <label className="form-input-radio__label" htmlFor="radio2">Женщина</label>
             </div>
         </div>
@@ -86,10 +105,10 @@ useEffect(()=>{
                 <input className="form-input__file" type="file" name="photo" accept="image/*,image/jpeg" />
             </div>
            <div className="form-input__checkbox">
-                <input id="checkbox" type="checkbox" value="true"></input>
+                <input id="checkbox" type="checkbox" value="true" checked={checked} onChange={chengeCheckbox}></input>
                 <label className="form-inputcheckboxlabel" htmlFor="checkbox">Я согласен получить ответ на указанную почту</label> 
            </div>
-          <button onClick={clickFeedback} 
+          <button onClick={clickFeedback}
                            className='formButton' id="submit">Отправить</button>
        </div>
        </form>

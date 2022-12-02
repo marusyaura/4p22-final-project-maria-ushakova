@@ -8,7 +8,7 @@ line-height: calc(16 / 1440 * 100vw);
 margin-top: calc(30 / 1440 * 100vw);
 margin-bottom: calc(30 / 1440 * 100vw);
 width: calc(600 / 1440 * 100vw);
-height: calc(950 / 1440 * 100vw);
+height: calc(1000 / 1440 * 100vw);
 left: calc(420 / 1440 * 100vw);
 background: #FFFFFF;
 box-shadow: 1px 1px 10px 4px #f1b8bf;
@@ -253,6 +253,36 @@ font-weight: 700;
     font-weight: 700;
     color: #7c0d1a;
     margin-bottom: calc(10 / 1440 * 100vw);
+}
+
+.FeedbackFormButton {
+    width: calc(180 / 1440 * 100vw);
+    height: calc(52 / 1440 * 100vw);
+    margin-top: calc(30 / 1440 * 100vw);
+    left: calc(209 / 1440 * 100vw);
+    border: 0;
+    color: #FFFFFF;
+    background-color: #77373f;
+    font-weight: 700;
+    font-size: calc(17 / 1440 * 100vw);;
+    font-family: Comic Sans MS;
+    border-radius: 5px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    cursor: pointer;
+}
+
+.FeedbackFormButton:hover {
+    background-color: #7c0d1a;
+}
+
+.FeedbackFormButton_disabled {
+    background-color: #6e6e6e;
+}
+
+.FeedbackFormButton_disabled:hover {
+    background-color: #6e6e6e;
 }
 
 @media screen and (max-width: 768px) {
