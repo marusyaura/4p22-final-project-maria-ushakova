@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/4p22-final-project-maria-ushakova/static/css/main.399f3105.css",
-    "main.js": "/4p22-final-project-maria-ushakova/static/js/main.4a907738.js",
+    "main.css": "/4p22-final-project-maria-ushakova/static/css/main.869991d6.css",
+    "main.js": "/4p22-final-project-maria-ushakova/static/js/main.94c18f8f.js",
     "static/media/dots.jpg": "/4p22-final-project-maria-ushakova/static/media/dots.f29da5b45432e5e27dc3.jpg",
     "index.html": "/4p22-final-project-maria-ushakova/index.html",
-    "main.399f3105.css.map": "/4p22-final-project-maria-ushakova/static/css/main.399f3105.css.map",
-    "main.4a907738.js.map": "/4p22-final-project-maria-ushakova/static/js/main.4a907738.js.map"
+    "main.869991d6.css.map": "/4p22-final-project-maria-ushakova/static/css/main.869991d6.css.map",
+    "main.94c18f8f.js.map": "/4p22-final-project-maria-ushakova/static/js/main.94c18f8f.js.map"
   },
   "entrypoints": [
-    "static/css/main.399f3105.css",
-    "static/js/main.4a907738.js"
+    "static/css/main.869991d6.css",
+    "static/js/main.94c18f8f.js"
   ]
 }
