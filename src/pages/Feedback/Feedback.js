@@ -3,7 +3,7 @@ import './Feedback.css';
 function FeedbackPage() {
     return (
         <>
-         <form className='form'>
+         <form className='formmain'>
         <div className="form__heading">
         <h2>Обратная связь</h2>
       </div>

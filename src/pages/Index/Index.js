@@ -7,7 +7,8 @@ import { getProducts } from '../../store/products/productsSlice';
 
 
 function IndexPage() {
-    const [ products, isLoading ] = useSelector((state) => [ state.products.entities, state.products.loading ]);
+  const [category, setCategory] = useState('all');  
+  const [ products, isLoading ] = useSelector((state) => [ state.products.entities, state.products.loading ]);
     const dispatch = useDispatch();
     
     useEffect(() => {
@@ -21,8 +22,32 @@ function IndexPage() {
       return item.title.toLowerCase().includes(value.toLowerCase())
     })
 
+    const filtered = products.filter(product => {
+      if (category !== 'all' && product.category !== category) {
+        return false;
+      }
+        return true;
+      });
+
     return (
       <>
+      <div>
+      <div className="CategoryContainer"> 
+            <button className="CategoryButton" onClick= {() => setCategory(`all`)}> ALL</button>
+                <button className="CategoryButton"  onClick= {() => setCategory(`Низкокалорийные`)}>
+                Низкокалорийные
+                </button>
+                <button className="CategoryButton" onClick= {() => setCategory(`На День рождения`)}>
+                На День рождения
+                </button>
+                <button className="CategoryButton" onClick= {() => setCategory('НЕторт')}>
+                НЕторт
+                </button>
+                <button className="CategoryButton" onClick= {() => setCategory('Шоколад')}>
+                Шоколад
+                </button>
+            </div>
+      </div>
       <div className="IndexMenucontainer">
       <Link to ={'feedback'}>
         <div className='IndexMenucontaineritems'>Форма обратной связи</div>
@@ -39,7 +64,7 @@ function IndexPage() {
       </div>
         <div className="IndexCardcontainer">
         {
-          !isLoading && filteredProducts.map((item, index) => {
+          !isLoading && filtered.map((item, index) => {
             return  <Card key={index}
                           title={item.title}
                           description={item.previewDescription}

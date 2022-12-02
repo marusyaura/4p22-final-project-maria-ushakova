@@ -5,7 +5,7 @@ const getProducts = createAsyncThunk(
 
     async (thunkAPI) => {
         console.log('getProducts');
-        const response = await fetch('https://api.npoint.io/cb648043f49f676ca672')
+        const response = await fetch('https://api.npoint.io/da062c3f09ea2612e5a8')
         const result = await response.json();
         console.log('result', result)
         return result.products;

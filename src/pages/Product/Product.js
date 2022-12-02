@@ -12,7 +12,7 @@ function ProductPage() {
    
    useEffect(() => {
    
-       const response = fetch('https://api.npoint.io/cb648043f49f676ca672')
+       const response = fetch('https://api.npoint.io/da062c3f09ea2612e5a8')
        .then((response) => response.json())
        .then((result) => {
         setProduct(result.products.filter(product => product.id == userId)[0]);

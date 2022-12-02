@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-.form {
+.formmain {
 font-size: calc(16 / 1440 * 100vw);
 line-height: calc(16 / 1440 * 100vw);
 margin-top: calc(30 / 1440 * 100vw);
