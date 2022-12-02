@@ -59,7 +59,7 @@ justify-content: space-around;
 .CategoryButton {
   background: #f39069;
   font-weight: 500;
-  font-size: calc(27 / 1440 * 100vw);;
+  font-size: calc(25 / 1440 * 100vw);;
   font-family: Comic Sans MS;
   border-radius: 5px;
   color: white;
@@ -95,7 +95,7 @@ justify-content: space-around;
   
   .CategoryButton {
     font-weight: 400;
-    font-size: calc(55 / 1440 * 100vw);;
+    font-size: calc(45 / 1440 * 100vw);;
   }
 
 }
