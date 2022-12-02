@@ -21,6 +21,8 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border-radius: 10px;
+  border: 1px solid #f3c1ba
  }
 
  .IndexMenucontaineritems {
@@ -28,6 +30,7 @@
   border: calc(2 / 1440 * 100vw) solid #f1b8bf;
   border-radius: 7px;
   padding:0.4rem;
+  text-align: center;
  }
 
  .search__input{
@@ -46,4 +49,53 @@
 
  .search__input:focus { 
   border-color: hsl(335, 79%, 40%);
+}
+
+.CategoryContainer{
+display: flex;
+justify-content: space-around;
+}
+
+.CategoryButton {
+  background: #f39069;
+  font-weight: 500;
+  font-size: calc(27 / 1440 * 100vw);;
+  font-family: Comic Sans MS;
+  border-radius: 5px;
+  color: white;
+  border: 0;
+}
+
+@media screen and (max-width: 768px) {
+
+  .IndexMenucontainer {
+    height: 8rem;
+    border-radius: 5px;
+    border: 1px solid #f3c1ba;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.1rem;
+    padding: 0.1rem;
+   }
+  
+   .IndexMenucontaineritems {
+    width: calc(750 / 1440 * 100vw); 
+    font-size: 1rem;
+    border: calc(1 / 1440 * 100vw) solid #f1b8bf;
+    border-radius: 5px;
+    text-align: center;
+   }
+  
+   .search__input{
+    width: calc(750 / 1440 * 100vw);
+    height: calc(120 / 1440 * 100vw);
+    font-size: calc(55 / 1440 * 100vw);
+    line-height: calc(23 / 1440 * 100vw);
+   }
+  
+  .CategoryButton {
+    font-weight: 400;
+    font-size: calc(55 / 1440 * 100vw);;
+  }
+
 }

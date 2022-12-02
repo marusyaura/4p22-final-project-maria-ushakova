@@ -2,12 +2,7 @@
     box-sizing: border-box;
 }
 
-body {
-    width:100%;
-}
-
 .HeaderContainer {
-width: 100%;
 background-image: url("../../../public/dots.jpg");
 background-size: cover;
 height: 8rem;
@@ -15,6 +10,8 @@ display: flex;
 flex-wrap: wrap;
 align-items: center;
 justify-content: space-around;
+border: 1px solid #f3c1ba;
+border-radius: 10px;
 
 }
 

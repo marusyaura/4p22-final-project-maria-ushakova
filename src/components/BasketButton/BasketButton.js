@@ -8,7 +8,7 @@ export default function IconLabelButtons() {
 
     return (
     <Stack direction="row" spacing={2}>
-      <Button color="error" variant="outline" size="small" aria-label="add to shopping cart" endIcon={<AddShoppingCartIcon />}>
+      <Button color="error" variant="outline" size="large" aria-label="add to shopping cart" endIcon={<AddShoppingCartIcon />}>
       Корзина
       </Button> 
     </Stack>

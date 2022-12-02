@@ -89,4 +89,9 @@ body {
     .ButtonCounter {
         font-size: 1.5rem;
       }
+
+      .ProductImage {
+        height: 15rem;
+    }
+
   }

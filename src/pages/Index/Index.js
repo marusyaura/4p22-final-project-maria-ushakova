@@ -33,7 +33,7 @@ function IndexPage() {
       <>
       <div>
       <div className="CategoryContainer"> 
-            <button className="CategoryButton" onClick= {() => setCategory(`all`)}> ALL</button>
+            <button className="CategoryButton" onClick= {() => setCategory(`all`)}> ВСЕ</button>
                 <button className="CategoryButton"  onClick= {() => setCategory(`Низкокалорийные`)}>
                 Низкокалорийные
                 </button>
