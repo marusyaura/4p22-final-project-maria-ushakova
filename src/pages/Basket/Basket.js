@@ -5,6 +5,18 @@ import './Basket.css';
 function BasketPage() {
     const products = useSelector(state => state.products.entities);
     const basket = useSelector(state => state.basket);
+
+    const makeOrder = (event) => {
+        event.preventDefault();
+        const productsInBasketIds = Object.keys(basket);
+        const result = products
+            .filter(product => productsInBasketIds.includes(String(product.id)))
+            .map(product => ({
+                ...product,
+                count: basket[product.id]
+            }));
+        console.log(result);
+    }
     
     return (
             <>
@@ -36,7 +48,7 @@ function BasketPage() {
              }
              </div>            
              <div className='MakeOrder'>
-                <button onClick={(event) => console.log(basket)}>Оформить заказ</button>
+                <button onClick={makeOrder}>Оформить заказ</button>
              </div>
             </>
            )

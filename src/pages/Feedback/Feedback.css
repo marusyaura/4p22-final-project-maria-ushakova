@@ -8,7 +8,7 @@ line-height: calc(16 / 1440 * 100vw);
 margin-top: calc(30 / 1440 * 100vw);
 margin-bottom: calc(30 / 1440 * 100vw);
 width: calc(600 / 1440 * 100vw);
-height: calc(800 / 1440 * 100vw);
+height: calc(950 / 1440 * 100vw);
 left: calc(420 / 1440 * 100vw);
 background: #FFFFFF;
 box-shadow: 1px 1px 10px 4px #f1b8bf;
@@ -200,10 +200,11 @@ font-weight: 700;
 }
 
 .form-input-email__error {
-    position: absolute;
-    top: calc(86 / 1440 * 100vw);
-    right: calc(45 / 1440 * 100vw);
+    font-size: calc(23 / 1440 * 100vw);
+    font-weight: 700;
     color: #EE2424;
+    margin-top: calc(10 / 1440 * 100vw);
+    margin-left: calc(10 / 1440 * 100vw);
 }
 
 .form-inputcheckboxlabel {
@@ -262,8 +263,7 @@ font-weight: 700;
     margin-top: calc(30 / 768 * 100vw);
     margin-bottom: calc(30 / 768 * 100vw);
     width: calc(600 / 768 * 100vw);
-    height: calc(830 / 768 * 100vw);
-
+    height: calc(1050 / 768 * 100vw);
     }
     
     .form__heading {
@@ -272,6 +272,7 @@ font-weight: 700;
     
     .form-input__input {
         width: calc(509 / 768 * 100vw);
+        height: calc(50 / 768 * 100vw);
         border: calc(1 / 768 * 100vw) solid #f1b8bf;
         font-size: calc(28 / 768 * 100vw);
         line-height: calc(60 / 768 * 100vw);
@@ -290,6 +291,7 @@ font-weight: 700;
         margin-bottom: calc(11 / 768 * 100vw);
         margin-left: calc(33 / 768 * 100vw);
         margin-top: calc(16 / 768 * 100vw);
+        width: calc(509 / 768 * 100vw);
     }
     
     .form-input__checkbox {
@@ -300,7 +302,7 @@ font-weight: 700;
     }
     
     .form-input__radio {
-        margin-bottom: calc(35 / 768 * 100vw);
+        margin-bottom: calc(45 / 768 * 100vw);
         margin-left: calc(43 / 768 * 100vw);
         height: calc(70 / 768 * 100vw);;
     }
@@ -368,14 +370,15 @@ font-weight: 700;
         height: calc(16 / 768 * 100vw);
         font-size: calc(23 / 768 * 100vw);
         line-height: calc(16 / 768 * 100vw);
-        width: calc(90 / 768 * 100vw);
-        margin-bottom: calc(13 / 768 * 100vw);
+        width: calc(500 / 768 * 100vw);
+        margin-bottom: calc(5 / 768 * 100vw);
     }
     
     .form-input-email__error {
-        position: absolute;
-        top: calc(86 / 768 * 100vw);
-        right: calc(45 / 768 * 100vw);
+        font-size: calc(23 / 768 * 100vw);;
+        font-weight: 700;
+        margin-top: calc(10 / 768 * 100vw);
+        margin-left: calc(10 / 768 * 100vw);
     }
     
     .form-inputcheckboxlabel {

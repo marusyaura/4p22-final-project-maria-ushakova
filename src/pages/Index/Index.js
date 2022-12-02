@@ -22,7 +22,7 @@ function IndexPage() {
       return item.title.toLowerCase().includes(value.toLowerCase())
     })
 
-    const filtered = products.filter(product => {
+    const filtered = filteredProducts.filter(product => {
       if (category !== 'all' && product.category !== category) {
         return false;
       }
