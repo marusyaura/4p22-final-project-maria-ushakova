@@ -11,7 +11,7 @@ function Footer() {
              <Link className="FooterLogoContainer" to="/">
                 <div className='Contactscontainer'></div>
                 <h2>Контакты</h2>
-                <div></div>
+                <div>marusyaura@mail.ru</div>
              </Link>
         </footer>
        </> 

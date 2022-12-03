@@ -1,66 +1,96 @@
 import { useEffect, useState } from 'react';
 import './Feedback.css';
 
-function FeedbackPage() {
+const FeedbackPage = () => {
 
 const [ email, setEmail ] = useState('')
 const [ name, setName] = useState('')
 const [ textarea, setTextarea ] = useState('')
 
-const [ emailError, setEmailError ] = useState('error')
-const [ nameError, setNameError] = useState('error')
-const [ textareaError, setTextareaError ] = useState('error')
+
+const [ emailDirty, setEmailDirty ] = useState(false)
+const [ nameDirty, setNameDirty] = useState(false)
+const [ textareaDirty, setTextareaDirty ] = useState(false)
+
+
+const [ emailError, setEmailError ] = useState('Поле не должно оставаться пустым')
+const [ nameError, setNameError] = useState('Поле не должно оставаться пустым')
+const [ textareaError, setTextareaError ] = useState('Поле не должно оставаться пустым')
 
 const [gender, setGender] = useState('мужчина')
 
 const [checked, setChecked] = useState(true)
 
-  
 const chengeGender = (event) => { 
-   setGender(event.target.value);
-  }
-
-const clickMailValue = (event) => {
-  setEmail(event.target.value); 
-}
-
-const clickTextValue = (event) => {
-  setTextarea(event.target.value); 
-}
-
-const chengeCheckbox= (event) => {
-    setChecked(!checked);
+  setGender(event.target.value);
  }
-   
-useEffect(() => {
 
-      const mask = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      
-      if (String(email) === ''){
-        setEmailError('Поле обязательно для заполнения')       
-      } else if (!(mask.test(String(email).toLowerCase()))){
-            setEmailError('Email введён некорректно');
-      } else setEmailError('');
+const chengeCheckbox = (event) => {
+   setChecked(!checked);
+}
+  
+const emailHandler = (e) => {
+  setEmail(e.target.value)
+  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (!re.test(String(e.target.value).toLowerCase())){
+        setEmailError('Некорректный e-mail')
+} else {
+  setEmailError('')
+}
+}
 
-      if (String(name) === ''){
-          setNameError('Поле обязательно для заполнения')
-      } else setNameError('');
+const nameHandler = (e) => {
+  setName(e.target.value)
+  if(e.target.value.length < 2) {
+    setNameError('Поле должно содержать более 1 символа')
+    if(!e.target.value) {
+      setNameError('Поле не должно оставаться пустым')
+    }
+  } else {
+    setNameError('')
+  }
+}
 
-      if (String(textarea) === ''){
-        setTextareaError('Поле обязательно для заполнения')
-      } else setTextareaError('');
+const textareHandler = (e) => {
+  setTextarea(e.target.value)
+  if(e.target.value.length < 2) {
+    setTextareaError('Поле должно содержать более 1 символа')
+    if(!e.target.value) {
+      setTextareaError('Поле не должно оставаться пустым')
+    }
+  } else {
+    setTextareaError('')
+  }
+}
 
-}, [email, name, textarea])
+const blurHandler = (e) => {
+  switch (e.target.id) {
+          case 'name':
+           setNameDirty(true)
+            break
+          case 'email':
+           setEmailDirty(true)
+            break
+          case 'textarea':
+          setTextareaDirty(true)
+            break
+  }
+}
 
 const clickFeedback = (event) => {
-      event.preventDefault();
-    
   if (emailError+nameError+textareaError) {
-      
+      event.preventDefault();
+      event.stopPropagation();
+
   } else {
-     console.log({Email: email, ФИО: name, Обращение: textarea, Пол: gender, Согласие: checked});
+    event.preventDefault();
+    event.stopPropagation();
+
+      console.log({Email: email, ФИО: name, Обращение: textarea, Пол: gender, Согласие: checked});
   }
 }
+
+
     return (
         <>
          <form className='formmain'>
@@ -70,17 +100,16 @@ const clickFeedback = (event) => {
       <div className="form__input">
         <div className="form-input__email">
           <label className="form-input-email__label" htmlFor="text">Имя</label>
-          <div className='form-input-email__error' id="name-error">{nameError}</div>
-          <input className="form-input__input" value={name} id="name" htmlFor="text" type="text" placeholder="Введите ФИО" onChange={(event)=>setName(event.target.value)}/>
+          {(nameDirty && nameError) && <div className='form-input-email__error'>{nameError}</div>}
+          <input onChange={e => nameHandler(e)} value={name} onBlur={e => blurHandler(e)} className="form-input__input" id="name" htmlFor="text" type="text" placeholder="Введите ФИО"/>
         </div>
         <div className="form__input">
         <div className="form-input__email">
           <label className="form-input-email__label" htmlFor="email">Email</label>
-          <div className='form-input-email__error' id="email-error">{emailError}</div>
-          <input className="form-input__input" value={email} id="email" htmlFor="email" type="email" placeholder="Введите email" onChange={clickMailValue}/>
+          {(emailDirty && emailError) && <div className='form-input-email__error'>{emailError}</div>}
+          <input onChange={e => emailHandler(e)} value={email} onBlur={e => blurHandler(e)} className="form-input__input" id="email" htmlFor="email" type="email" placeholder="Введите email"/>
         </div>
-        </div>
-          <div className="form-input__radio"> 
+        <div className="form-input__radio"> 
             <div className="form-input-radio__gender">Пол</div>
             <div className="form-input-radio__box">
             <input className="form-input-radio__input" id="radio1" type="radio" name="gender" value="мужской"
@@ -97,8 +126,8 @@ const clickFeedback = (event) => {
         </div>
           <div className="form-input__textarea">
             <label className="form-input-textarea_label"  htmlFor="textarea">Ваше обращение</label>
-            <div className='form-input-email__error' id="textarea-error">{textareaError}</div>
-            <textarea className="form-input-textarea_input" value={textarea} id="textarea" htmlFor="textarea" placeholder="Введите обращение..." onChange={clickTextValue}></textarea>
+            {(textareaDirty && textareaError) && <div className='form-input-email__error' style={{color:'red'}}>{textareaError}</div>}
+            <textarea onChange={e => textareHandler(e)} value={textarea} onBlur={e => blurHandler(e)} className="form-input-textarea_input" id="textarea" htmlFor="textarea" placeholder="Введите обращение..."></textarea>
           </div>
           <div className="form-input__file">
                 <div className="form-input-file_label">Вставьте фото</div>
@@ -107,6 +136,7 @@ const clickFeedback = (event) => {
            <div className="form-input__checkbox">
                 <input id="checkbox" type="checkbox" value="true" checked={checked} onChange={chengeCheckbox}></input>
                 <label className="form-inputcheckboxlabel" htmlFor="checkbox">Я согласен получить ответ на указанную почту</label> 
+           </div>
            </div>
           <button onClick={clickFeedback} className='formButton' type="button">Отправить</button>
        </div>
