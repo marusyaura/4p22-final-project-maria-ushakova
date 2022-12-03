@@ -9,7 +9,10 @@ function Footer() {
         <>
         <footer className='Footer'>
              <Link className="FooterLogoContainer" to="/">
-    </Link>
+                <div className='Contactscontainer'></div>
+                <h2>Контакты</h2>
+                <div></div>
+             </Link>
         </footer>
        </> 
     )

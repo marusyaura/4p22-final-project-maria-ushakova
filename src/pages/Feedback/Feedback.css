@@ -115,7 +115,7 @@ font-weight: 700;
 color: #7c0d1a;
 font-size: calc(28 / 1440 * 100vw);
 font-weight: 700;
-        font-family: Comic Sans MS;
+font-family: Comic Sans MS;
 }
 
 .form-input-textarea__input:focus { 

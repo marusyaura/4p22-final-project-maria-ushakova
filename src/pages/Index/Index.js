@@ -9,17 +9,17 @@ import { getProducts } from '../../store/products/productsSlice';
 function IndexPage() {
   const [category, setCategory] = useState('all');  
   const [ products, isLoading ] = useSelector((state) => [ state.products.entities, state.products.loading ]);
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
     
     useEffect(() => {
         dispatch(getProducts());
         
     }, []);    
 
-    const [ value, setValue ] = useState('');
+    const [ searchValue, setSearchValue ] = useState('');
 
     const filteredProducts = products.filter(item => {
-      return item.title.toLowerCase().includes(value.toLowerCase())
+      return item.title.toLowerCase().includes(searchValue.toLowerCase())
     })
 
     const filtered = filteredProducts.filter(product => {
@@ -55,7 +55,7 @@ function IndexPage() {
 
       <form className='SearchForm'>
         <input className='search__input' type="text" placeholder="Поиск по каталогу" 
-        onChange={(event) => setValue(event.target.value)}/>
+        onChange={(event) => setSearchValue(event.target.value)}/>
 
       </form>
       <Link to ={'enter'}>

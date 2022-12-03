@@ -17,12 +17,39 @@
     align-items: center;
     gap: 1rem;
     font-size: 1.5rem;
-    padding: 1rem;
+    padding-right: 1rem;
 }
+
+
+.MakeOrder {
+    display: flex;
+    justify-content: flex-end;
+   
+}
+
+.MakeOrderButton {
+  font-size: 1.3rem;
+  border: calc(2 / 1440 * 100vw) solid #f1b8bf;
+  border-radius: 7px;
+  padding:0.4rem;
+  text-align: center;
+  background-color: #7c0d1a;
+  color: white;
+  font-size: calc(28 / 1440 * 100vw);
+  font-weight: 700;
+  font-family: Comic Sans MS;
+   margin-right: 1rem;
+}
+
 
 @media screen and (max-width: 768px) {
     .BasketTotalcontainer {
     font-size: 1.2rem;
     padding: 0.2rem;
     }
+
+    .MakeOrderButton {
+        font-size: calc(28 / 768 * 100vw);
+         margin-right: 0.2rem;
+      }
 }

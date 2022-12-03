@@ -30,6 +30,9 @@ function BasketPage() {
             }, 0) 
             }
             </div>
+            <div className='MakeOrder'>
+                <button className='MakeOrderButton' onClick={makeOrder}>Оформить заказ</button>
+            </div>
             <div className='Basketgoodscontainer'>
              { products
                      .filter((product) => basket[product.id])
@@ -47,9 +50,7 @@ function BasketPage() {
                          )
              }
              </div>            
-             <div className='MakeOrder'>
-                <button onClick={makeOrder}>Оформить заказ</button>
-             </div>
+             
             </>
            )
 }

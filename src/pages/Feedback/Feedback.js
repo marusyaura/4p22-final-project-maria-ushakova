@@ -15,40 +15,32 @@ const [gender, setGender] = useState('мужчина')
 
 const [checked, setChecked] = useState(true)
 
-
-const clickFeedback = (event) => {
-  if (emailError+nameError+textareaError) {
-      event.preventDefault();
-
-  } else {
-    event.preventDefault();
-      console.log({Email: email, ФИО: name, Обращение: textarea, Пол: gender, Согласие: checked});
-  }
-}
   
-const chengeGender = (event)=> { 
-   setGender(event.target.value); 
+const chengeGender = (event) => { 
+   setGender(event.target.value);
   }
 
-const clickMailValue = (event)=>{
-  setEmail(event.target.value);    
+const clickMailValue = (event) => {
+  setEmail(event.target.value); 
 }
 
-const clickTextValue = (event)=>{
-  setTextarea(event.target.value);    
+const clickTextValue = (event) => {
+  setTextarea(event.target.value); 
 }
 
-const chengeCheckbox = (event)=> {
+const chengeCheckbox= (event) => {
     setChecked(!checked);
  }
    
-useEffect(()=>{
+useEffect(() => {
+
       const mask = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      
       if (String(email) === ''){
-        setEmailError('Поле обязательно для заполнения')
-          } else if (!(mask.test(String(email).toLowerCase()))){
+        setEmailError('Поле обязательно для заполнения')       
+      } else if (!(mask.test(String(email).toLowerCase()))){
             setEmailError('Email введён некорректно');
-          } else setEmailError('');
+      } else setEmailError('');
 
       if (String(name) === ''){
           setNameError('Поле обязательно для заполнения')
@@ -60,7 +52,15 @@ useEffect(()=>{
 
 }, [email, name, textarea])
 
-
+const clickFeedback = (event) => {
+      event.preventDefault();
+    
+  if (emailError+nameError+textareaError) {
+      
+  } else {
+     console.log({Email: email, ФИО: name, Обращение: textarea, Пол: gender, Согласие: checked});
+  }
+}
     return (
         <>
          <form className='formmain'>
@@ -108,8 +108,7 @@ useEffect(()=>{
                 <input id="checkbox" type="checkbox" value="true" checked={checked} onChange={chengeCheckbox}></input>
                 <label className="form-inputcheckboxlabel" htmlFor="checkbox">Я согласен получить ответ на указанную почту</label> 
            </div>
-          <button onClick={clickFeedback}
-                           className='formButton' id="submit">Отправить</button>
+          <button onClick={clickFeedback} className='formButton' type="button">Отправить</button>
        </div>
        </form>
        </>

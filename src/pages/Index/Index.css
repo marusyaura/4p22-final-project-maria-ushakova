@@ -69,7 +69,7 @@ justify-content: space-around;
 @media screen and (max-width: 768px) {
 
   .IndexMenucontainer {
-    height: 8rem;
+    height: 9rem;
     border-radius: 5px;
     border: 1px solid #f3c1ba;
     display: flex;
@@ -79,18 +79,18 @@ justify-content: space-around;
    }
   
    .IndexMenucontaineritems {
-    width: calc(750 / 1440 * 100vw); 
+    width: calc(500 / 768 * 100vw); 
     font-size: 1rem;
-    border: calc(1 / 1440 * 100vw) solid #f1b8bf;
+    border: calc(1 / 768 * 100vw) solid #f1b8bf;
     border-radius: 5px;
     text-align: center;
    }
   
    .search__input{
-    width: calc(750 / 1440 * 100vw);
-    height: calc(120 / 1440 * 100vw);
-    font-size: calc(55 / 1440 * 100vw);
-    line-height: calc(23 / 1440 * 100vw);
+    width: calc(500 / 768 * 100vw);
+    height: 2.5rem;
+    font-size: calc(25 / 768 * 100vw);
+    line-height: calc(25 / 768 * 100vw);
    }
   
   .CategoryButton {
