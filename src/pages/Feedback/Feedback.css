@@ -274,15 +274,7 @@ font-family: Comic Sans MS;
 }
 
 .FeedbackFormButton:hover {
-    background-color: #7c0d1a;
-}
-
-.FeedbackFormButton_disabled {
-    background-color: #6e6e6e;
-}
-
-.FeedbackFormButton_disabled:hover {
-    background-color: #6e6e6e;
+    background-color: #d45160;
 }
 
 @media screen and (max-width: 768px) {

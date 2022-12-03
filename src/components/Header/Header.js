@@ -17,9 +17,11 @@ const dispatch = useDispatch();
     <Link to="/">
     </Link>
          <div className="HeaderContainer">
+            <Link to={'/'}>
             <div className="HeaderLogoContainer">
             <img className="HeaderLogo" alt="logo_sweetmarselina" src="/4p22-final-project-maria-ushakova/logo.png"></img>
             </div> 
+            </Link>
             <div className="HeaderNameContainer">
               <h2>Домашний кондитер</h2>
               <h2>Мария Ушакова</h2>

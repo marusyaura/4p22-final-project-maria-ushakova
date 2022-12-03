@@ -90,7 +90,6 @@ const clickFeedback = (event) => {
   }
 }
 
-
     return (
         <>
          <form className='formmain'>
@@ -138,7 +137,7 @@ const clickFeedback = (event) => {
                 <label className="form-inputcheckboxlabel" htmlFor="checkbox">Я согласен получить ответ на указанную почту</label> 
            </div>
            </div>
-          <button onClick={clickFeedback} className='formButton' type="button">Отправить</button>
+          <button onClick={clickFeedback} className='FeedbackFormButton' type="button">Отправить</button>
        </div>
        </form>
        </>
